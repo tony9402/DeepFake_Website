@@ -188,7 +188,7 @@ class Triton:
     def run(self, faces):
         if len(faces) > 0:
             self.tritonclient = {
-                "resnest": connectServer(config["triton"]["resnest"])
+                "resnest": connectServer(config["triton"]["resnest"]),
                 "b7"     : connectServer(config["triton"]["b7"])
             }
             if self.DEBUG:
