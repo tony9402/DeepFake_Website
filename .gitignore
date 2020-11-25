@@ -2,6 +2,7 @@
 *.mp4
 *.swp
 
+weights/
 __pycache__/
 .ipynb_checkpoints/
 *.mp4/
