@@ -102,7 +102,7 @@ class Triton:
         showList = [ i[1] for i in result if i[0] >= 0.81 ]
         showList = set(showList)
         
-        return result[l3][0] >= 0.81, percent, showList
+        return percent >= 0.9, percent, showList
 
     def getX(self, faces, input_size, batch_size):
         inputSize = list(set(input_size))
