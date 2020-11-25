@@ -65,10 +65,10 @@ def result():
         percent  = result['percent']
         video    = result['id']
         if deepfake:
-            flash('이 영상은 딥페이크일 확률이 높습니다.', 'danger')
+            flash('이 영상은 딥페이크 영상입니다.')
             flash('딥페이크 영상일 확률 {:.2f} % !!!'.format(percent * 100), 'danger')
         else:
-            flash('이 영상은 딥페이크일 확률이 낮습니다.', 'success')
+            flash('이 영상은 딥페이크 영상이 아닙니다.')
             flash('딥페이크 영상일 확률 {:.2f} % !!!'.format(percent * 100), 'success')
 
     return render_template('result.html', title="딥페이크 검출 결과", images=images, id=video, deepfake=deepfake)
