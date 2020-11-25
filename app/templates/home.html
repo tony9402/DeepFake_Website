@@ -3,6 +3,14 @@
 {% block content %}
 
 <style type="text/css">
+
+@media (max-height: 800px) {
+    footer {
+        position: relative;
+        height: 40px;
+    }
+}
+
 #content{
     max-width: 600px;
     height: auto;
@@ -15,6 +23,10 @@
     content: '';
     height: 100%;
     vertical-align: middle;
+}
+
+.wrap-all{
+    min-height: 681px;
 }
 
 .wrap-top{
@@ -110,30 +122,32 @@
 </style>
 
 <div id="content">
-    <div class="wrap-top">
-        <p>딥페이크 영상 판별</p> 
+    <div class="wrap-all">
+        <div class="wrap-top">
+            <p>딥페이크 영상 판별</p> 
+        </div>
+        <form action="" method="POST" id="video-form" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            <!--<div class="drop-zone">
+                <span class="drop-zone__prompt">Drop file here or click to upload</span> 
+                <input type="file" accept="video/*" name="videofile" class="drop-zone__input" id="video-file"/>
+            </div>-->
+            <!--        <fieldset class="do-group">-->
+            <div class="drop-zone">
+                <span class="drop-zone__prompt">Drop file here or click to upload</span> 
+                {{ form.video_content(class="drop-zone__input") }}
+            </div>
+            <p class="file-size">영상 파일 용량 : </p>
+            <div class="tmp" style="height: 2%; display: block"> &nbsp; </div>
+            <div class="filebox">
+                <label for="ex_file">업로드</label>
+                <button id="ex_file" style="display: none;"></button>
+            </div>
+                <!--</fieldset> -->
+            <!--<p class="file-size">영상 파일 용량 : </p>-->
+            <!--<input type="submit" value="Submit" />-->
+        </form>
     </div>
-    <form action="" method="POST" id="video-form" enctype="multipart/form-data">
-        {{ form.hidden_tag() }}
-        <!--<div class="drop-zone">
-            <span class="drop-zone__prompt">Drop file here or click to upload</span> 
-            <input type="file" accept="video/*" name="videofile" class="drop-zone__input" id="video-file"/>
-        </div>-->
-        <!--        <fieldset class="do-group">-->
-        <div class="drop-zone">
-            <span class="drop-zone__prompt">Drop file here or click to upload</span> 
-            {{ form.video_content(class="drop-zone__input") }}
-        </div>
-        <p class="file-size">영상 파일 용량 : </p>
-        <div class="tmp" style="height: 2%; display: block"> &nbsp; </div>
-        <div class="filebox">
-            <label for="ex_file">업로드</label>
-            <button id="ex_file" style="display: none;"></button>
-        </div>
-            <!--</fieldset> -->
-        <!--<p class="file-size">영상 파일 용량 : </p>-->
-        <!--<input type="submit" value="Submit" />-->
-    </form>
 </div>
 
 
